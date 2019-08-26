@@ -1,0 +1,11 @@
+#!/bin/bash
+
+cp -r {{pkg.path}}/sample-data {{pkg.svc_static_path}}/
+
+{{#if cfg.chef_server.client_key_path }}
+{{#if cfg.chef_server.client_key }}
+cat << EOF > {{ cfg.chef_server.client_key_path }}
+{{ cfg.chef_server.client_key }}
+EOF
+{{/if ~}}
+{{/if ~}}

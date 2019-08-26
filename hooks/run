@@ -1,0 +1,5 @@
+#!/bin/bash
+
+exec 2>&1
+
+exec chef-load start --config "{{pkg.svc_config_path}}/chef-load.toml"
